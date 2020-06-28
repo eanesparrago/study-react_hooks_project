@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/study-react_hooks_project/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/study-react_hooks_project/static/js/main.5ef33f14.chunk.js",
+    "main.js.map": "/study-react_hooks_project/static/js/main.5ef33f14.chunk.js.map",
+    "runtime-main.js": "/study-react_hooks_project/static/js/runtime-main.3fff2b0d.js",
+    "runtime-main.js.map": "/study-react_hooks_project/static/js/runtime-main.3fff2b0d.js.map",
+    "static/js/2.f6e85e3c.chunk.js": "/study-react_hooks_project/static/js/2.f6e85e3c.chunk.js",
+    "static/js/2.f6e85e3c.chunk.js.map": "/study-react_hooks_project/static/js/2.f6e85e3c.chunk.js.map",
+    "index.html": "/study-react_hooks_project/index.html",
+    "precache-manifest.3f0c01ac7e61d4330fa95a6c21104d55.js": "/study-react_hooks_project/precache-manifest.3f0c01ac7e61d4330fa95a6c21104d55.js",
+    "service-worker.js": "/study-react_hooks_project/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/study-react_hooks_project/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.f6e85e3c.chunk.js.LICENSE.txt": "/study-react_hooks_project/static/js/2.f6e85e3c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3fff2b0d.js",
+    "static/js/2.f6e85e3c.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.5ef33f14.chunk.js"
+  ]
+}
