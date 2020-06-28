@@ -11,8 +11,9 @@ import useTodoState from "./hooks/useTodoState";
 function TodoApp() {
   const initialTodos = JSON.parse(window.localStorage.getItem("todos")) || "[]";
 
+  // initialTodos from localStorage is not used here because gh-pages won't have it
   const { todos, addTodo, removeTodo, toggleTodo, updateTodo } = useTodoState(
-    initialTodos
+    []
   );
 
   useEffect(() => {
