@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, memo } from "react";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Checkbox from "@material-ui/core/Checkbox";
@@ -6,19 +6,21 @@ import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
+
 import useToggleState from "./hooks/useToggleState";
-
 import EditTodoForm from "./EditTodoForm";
+import { DispatchContext } from "./contexts/todos.context";
 
-function Todo({ task, completed, id, removeTodo, toggleTodo, updateTodo }) {
+function Todo({ task, completed, id }) {
+  const dispatch = useContext(DispatchContext);
   const [isEditing, toggleIsEditing] = useToggleState(false);
 
   const handleRemoveTodo = () => {
-    removeTodo(id);
+    dispatch({ type: "REMOVE", id });
   };
 
   const handleToggleTodo = () => {
-    toggleTodo(id);
+    dispatch({ type: "TOGGLE", id });
   };
 
   return (
@@ -27,7 +29,6 @@ function Todo({ task, completed, id, removeTodo, toggleTodo, updateTodo }) {
         <EditTodoForm
           task={task}
           id={id}
-          updateTodo={updateTodo}
           toggleIsEditing={toggleIsEditing}
         ></EditTodoForm>
       ) : (
@@ -58,4 +59,4 @@ function Todo({ task, completed, id, removeTodo, toggleTodo, updateTodo }) {
   );
 }
 
-export default Todo;
+export default memo(Todo);

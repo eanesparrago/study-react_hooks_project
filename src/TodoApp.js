@@ -1,25 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Grid from "@material-ui/core/Grid";
+
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
-import useTodoState from "./hooks/useTodoState";
+import { TodosProvider } from "./contexts/todos.context";
 
 function TodoApp() {
-  const initialTodos = JSON.parse(window.localStorage.getItem("todos")) || "[]";
-
-  // initialTodos from localStorage is not used here because gh-pages won't have it
-  const { todos, addTodo, removeTodo, toggleTodo, updateTodo } = useTodoState(
-    []
-  );
-
-  useEffect(() => {
-    window.localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
-
   return (
     <Paper
       style={{
@@ -38,14 +28,11 @@ function TodoApp() {
 
       <Grid container justify="center" style={{ marginTop: "1rem" }}>
         <Grid item xs={11} md={8} lg={4}>
-          <TodoForm addTodo={addTodo}></TodoForm>
+          <TodosProvider>
+            <TodoForm></TodoForm>
 
-          <TodoList
-            todos={todos}
-            removeTodo={removeTodo}
-            toggleTodo={toggleTodo}
-            updateTodo={updateTodo}
-          ></TodoList>
+            <TodoList></TodoList>
+          </TodosProvider>
         </Grid>
       </Grid>
     </Paper>
